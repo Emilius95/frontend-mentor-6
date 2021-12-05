@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+
+    /* #### Gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    /* 	#af67e9 */
+    --soft-blue: hsl(240, 73%, 65%);
+    /* 	#6565e7 */
+
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+
+    /* #### Dividers */
+    --light-grayish-blue: hsl(240, 5%, 91%);
+
+}
+
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    line-height: 1.6;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+
+    background: rgb(175,103,233);
+    background: linear-gradient(180deg, rgba(175,103,233,1) 50%, rgba(101,101,231,1) 100%);
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    min-width: 320px;
+    max-width: 600px;
+    margin: 118px 1.5em 50px;
+    padding: 1em 1.5em;
+    padding-bottom: 3em;
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    border-radius: 25px;
+}
+
+.image {
+    width: 231px;
+    max-width: 100%;
+
+    margin: 0 auto;
+    display: block;
+    margin-top: -123px;
+    position: sticky; 
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.image-desktop {
+    display: none;
+}
+
+.image-box {
+    display: none;
+}
+
+.image-shadow {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.image-shadow-desktop {
+    display: none;
+}
+
+.title {
+    text-align: center;
+    font-size: 2.1rem;
+    margin-top: 3em;
+    margin-bottom: .3em;
+}
+
+/* test */
+
+.acc {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    padding: 1em 0;
+}
+
+.accordion {
+    font-family: 'Kumbh Sans', sans-serif;
+    background:white;
+    cursor: pointer;
+    padding: 0;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: .85rem;
+    display: flex;    
+    align-items: center;
+  }
+
+  
+  .active, .accordion:hover {
+      color:hsl(14, 88%, 65%);
+    }
+    
+    .active {
+      font-weight: bold;
+      color: #000;
+      padding-bottom: .5em;
+    }
+
+  .accordion:after {
+    content: '';
+    background-image: url("./images/icon-arrow-down.svg");
+    width: 10px;
+    height: 7px;
+    font-weight: bold;
+    margin-left: auto;
+  }
+  
+  .active:after {
+    content: "";
+    background-image: url("./images/icon-arrow-down.svg");
+    font-weight: bolder;
+    transform: rotate(180deg);
+    display: flex;
+  }
+  
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    font-size: .8rem;
+  }
+
+    /* Media Queries */
+
+@media (min-width:1100px) {
+    .main {
+        position: relative;
+    }
+
+    .card {
+        max-width: none;
+        display: flex;
+        margin: 0 2em;
+        overflow: hidden;
+        z-index: 0;
+    }
+
+    .left-box {
+        width: 50%;
+    }
+
+    .right-box {
+        width: 50%;
+        padding: 3em 5em 3em 0;
+        margin-left: 4em;
+    }
+
+    .title {
+        text-align: left;
+        margin: 0;
+        margin-bottom: .5em;
+    }
+
+    .image {
+        display: none;
+    }
+
+    .image-shadow {
+        display: none;
+    }
+
+    .image-desktop {
+        display: block;
+        max-width: 90%;
+        position: absolute;
+        margin: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -8%;
+    }
+    
+    .image-shadow-desktop {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        margin-top: -5em;
+        margin-left: -37em;        
+        z-index: -1;
+        min-width: 100%;
+    }
+
+    .image-box {
+        display: block;
+        position: absolute;
+        top: 42%;
+        left: -6%;
+        z-index: 1;
+    }
+
+
+}
